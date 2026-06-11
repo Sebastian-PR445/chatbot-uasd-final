@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot UASD - Estatuto Orgánico</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">U</div>
+        <div>
+          <h1>Chatbot UASD</h1>
+          <p>Estatuto Orgánico</p>
+        </div>
+      </div>
+
+      <section class="suggestions-section">
+        <h2>Preguntas sugeridas</h2>
+        <div id="suggestions" class="suggestions"></div>
+      </section>
+    </aside>
+
+    <section class="chat-container">
+      <header class="chat-header">
+        <h2>Consulta inteligente del Estatuto Orgánico</h2>
+        <p>Haz preguntas sobre gobierno universitario, estudiantes, docentes, facultades y más.</p>
+      </header>
+
+      <div id="chatMessages" class="chat-messages">
+        <div class="message bot">
+          <div class="bubble">
+            Hola. Soy el asistente del Estatuto Orgánico de la UASD. Puedes hacerme una pregunta o elegir una sugerencia.
+          </div>
+        </div>
+      </div>
+
+      <form id="chatForm" class="chat-form">
+        <input
+          id="questionInput"
+          type="text"
+          placeholder="Escribe tu pregunta aquí..."
+          autocomplete="off"
+        />
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

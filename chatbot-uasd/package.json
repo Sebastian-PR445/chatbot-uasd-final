@@ -1,0 +1,21 @@
+{
+  "name": "chatbot-uasd-estatuto",
+  "version": "1.0.0",
+  "description": "Chatbot web con IA para consultar el Estatuto Orgánico de la UASD.",
+  "main": "server/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "openai": "latest",
+    "pdf-parse": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
+}
