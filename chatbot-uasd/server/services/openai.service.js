@@ -1,36 +1,31 @@
-import OpenAI from "openai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export const generateAnswer = async (question, context) => {
   try {
-    const response = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "system",
-          content:
-            "Eres un chatbot académico de la UASD. Responde de forma clara, breve y basada en el Estatuto Orgánico.",
-        },
-        {
-          role: "user",
-          content: `
+    const model = genAI.getGenerativeModel({
+      model: "gemini-1.5-flash",
+    });
+
+    const prompt = `
+Eres un chatbot académico de la UASD.
+
 Contexto:
 ${context}
 
 Pregunta:
 ${question}
-          `,
-        },
-      ],
-      temperature: 0.2,
-    });
 
-    return response.choices[0].message.content;
+Responde de forma clara, breve y basada en el Estatuto Orgánico.
+`;
+
+    const result = await model.generateContent(prompt);
+    const response = result.response.text();
+
+    return response;
   } catch (error) {
-    console.error("Error con OpenAI:", error);
+    console.error("Error con Gemini:", error);
     return "Ocurrió un error al generar la respuesta con inteligencia artificial.";
   }
 };
