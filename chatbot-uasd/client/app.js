@@ -1,5 +1,4 @@
-const API_URL = "/api/chat";
-const chatForm = document.getElementById("chatForm");
+const API_URL = "/api/chat";const chatForm = document.getElementById("chatForm");
 const questionInput = document.getElementById("questionInput");
 const chatMessages = document.getElementById("chatMessages");
 const suggestionsContainer = document.getElementById("suggestions");
