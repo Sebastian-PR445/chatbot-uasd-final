@@ -22,6 +22,14 @@
     {
       "src": "/",
       "dest": "client/index.html"
+    },
+    {
+      "src": "/style.css",
+      "dest": "client/style.css"
+    },
+    {
+      "src": "/app.js",
+      "dest": "client/app.js"
     }
   ]
 }
